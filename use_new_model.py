@@ -39,7 +39,7 @@ def process_log(log):
         max_tokens=1024,
         temperature=0.5,
         stop='\n',
-        prompt=f"Understand these logs and diagnose a problem and a solution: {log}"
+        prompt=f"Understand these logs and diagnose a problem and a solution: {log} ->"
     )
 
     analysis = response['choices'][0]['text']
@@ -47,7 +47,9 @@ def process_log(log):
     return analysis
 
 
-print(process_log('ocaApr 6 10:30:22 server1 kernel: [ 2601.567890] ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6'))
-print(process_log('Apr 6 10:30:22 server1 kernel: [ 2601.567890] ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6'))
+print(process_log(
+    'Apr 6 10:30:22 server1 kernel: [ 2601.567890] ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6'))
+print(process_log(
+    'Apr 6 10:30:22 server1 kernel: [ 2601.567890] ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6'))
 print(process_log('Apr 6 10:30:22 server1 main.exe: info: connected successfully to db3'))
 print(process_log('Apr 6 10:50:32 server1 main.exe: too many requests: put on hold, ten requests timing out'))
