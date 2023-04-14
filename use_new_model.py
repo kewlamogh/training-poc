@@ -45,9 +45,8 @@ def process_log(log):
     analysis = response['choices'][0]['text']
     db[problem] = analysis
     return analysis
-  
-# Random comment
 
+# Random comment
 
 print(process_log(
     'Apr 6 10:30:22 server1 kernel: [ 2601.567890] ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6'))
