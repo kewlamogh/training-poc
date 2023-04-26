@@ -15,7 +15,7 @@ if name == None:
 openai.api_key = os.environ["OPENAI_API_KEY"]
 
 
-def make_problem(log):
+def make_problem(log): 
   prompt = f'remove the timestamp, server name, and any hexadecimal values. {log}'
   response = openai.Completion.create(
       model=name,
