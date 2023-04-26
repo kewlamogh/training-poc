@@ -4,7 +4,7 @@ import openai
 from sqlitedict import SqliteDict
 db = SqliteDict('./my_db.sqlite', autocommit=True)
 
-json_file = os.environ['FINE_TUNES']
+json_file = open("fine_tunes.txt", 'rb').read()
 data = json.loads(json_file)['data']
 final_item = data[len(data) - 1]
 name = final_item['fine_tuned_model']
